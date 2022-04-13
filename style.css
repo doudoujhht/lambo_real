@@ -84,14 +84,29 @@ svg{
     line-height: 0.9;
     letter-spacing: -3.48px;
     text-transform: uppercase;
+    animation: slide-in 3s;
+    animation-timing-function: cubic-bezier(0.59, 1.15, 1, 0.29);
 }
 
-#hexa{
+#hexa-container{
     width:6.5%;
     fill: transparent;
     stroke: #ffffff;
     padding-right: 4%;
     transition: 3s;
+
+}
+#hexa{
+    animation: hexa_anim 2s;
+}
+
+@keyframes hexa_anim{
+    from {
+        width: 0%;
+    }
+    to{
+        width:6.5%;
+    }
 }
 
 
@@ -118,14 +133,18 @@ svg{
     font-size: 2em;
     font-weight: 300;
     padding-top: 1%;
+    animation: anim-lineUp 2s linear;
+
 }
 #hexa-titre{
     font-size: 1em;
     font-weight:600;
+    animation: anim-lineUp 2s linear;
 }
 .hexagone-svg{
     fill: transparent;
 }
+
 
 #overview{
     color: white;
@@ -246,6 +265,33 @@ svg{
 	}
 }
 
+@keyframes slide-in {
+    from {
+        position: relative;
+        right: 40%;
+    }
+    to{
+        position: relative;
+        right: 0;
+    }
+}
+@keyframes anim-lineUp {
+    0% {
+      opacity: 0;
+      transform: translateY(80%);
+    }
+    20% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
 #overview{
 
 }
